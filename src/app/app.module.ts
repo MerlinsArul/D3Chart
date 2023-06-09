@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { DonutchartComponent } from './donutchart/donutchart.component';
 import { LinebarComponent } from './linebar/linebar.component';
+import { ScalechartComponent } from './scalechart/scalechart.component';
+import { CoordinateComponent } from './coordinate/coordinate.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { LinebarComponent } from './linebar/linebar.component';
     BarChartComponent,
     DonutchartComponent,
     LinebarComponent,
+    ScalechartComponent,
+    CoordinateComponent,
   ],
   imports: [
     BrowserModule,

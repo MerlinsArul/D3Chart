@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -6,11 +6,11 @@ import * as d3 from 'd3';
   templateUrl: './linebar.component.html',
   styleUrls: ['./linebar.component.css']
 })
-export class LinebarComponent implements OnInit {
+export class LinebarComponent implements AfterViewInit {
 
   constructor(){}
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
 this.barGraph()
 }
 
@@ -50,5 +50,9 @@ barGraph(){
       .attr("y", barHeight / 2)
       .attr("dy", ".35em")
       .text(function (d) { return d; });
+  }
+
+  ngOnDestroy(){
+this.barGraph()
   }
 }
