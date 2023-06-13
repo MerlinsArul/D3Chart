@@ -25,7 +25,7 @@ barGraph(){
       .domain([d3.min(data)!, d3.max(data)!])
       .range([50, 500]);
 
-    const svg = d3.select("body")
+    const svg = d3.select("#chart")
       .append("svg")
       .attr("width", width)
       .attr("height", barHeight * data.length);
@@ -52,7 +52,4 @@ barGraph(){
       .text(function (d) { return d; });
   }
 
-  ngOnDestroy(){
-this.barGraph()
-  }
 }

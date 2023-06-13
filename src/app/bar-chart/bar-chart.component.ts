@@ -50,14 +50,42 @@ export class BarChartComponent implements OnInit{
     this.y.domain([0, d3Array.max(StatsBarChart, (d) => d.frequency)]);
   }
 
+  // drawAxis() {
+  //   this.g.append('g')
+  //     .attr('class', 'axis axis--x')
+  //     .attr('transform', 'translate(0,' + this.height + ')')
+  //     .call(d3Axis.axisBottom(this.x));
+  //   this.g.append('g')
+  //     .attr('class', 'axis axis--y')
+  //     .call(d3Axis.axisLeft(this.y))
+  //     .append('text')
+  //     .attr('class', 'axis-title')
+  //     .attr('transform', 'rotate(-90)')
+  //     .attr('y', 6)
+  //     .attr('dy', '0.71em')
+  //     .attr('text-anchor', 'end')
+  //     .text('Frequency');
+  // }
   drawAxis() {
     this.g.append('g')
       .attr('class', 'axis axis--x')
       .attr('transform', 'translate(0,' + this.height + ')')
       .call(d3Axis.axisBottom(this.x));
+
     this.g.append('g')
       .attr('class', 'axis axis--y')
       .call(d3Axis.axisLeft(this.y))
+      .selectAll('g.tick')
+      .each((d:any) => {
+        this.g.append('line')
+          .attr('class', 'dotted-line')
+          .attr('x1', 0)
+          .attr('x2', this.width)
+          .attr('y1', this.y(d))
+          .attr('y2', this.y(d))
+          .style('stroke', 'black')
+          .style('stroke-dasharray', '2,2');
+      })
       .append('text')
       .attr('class', 'axis-title')
       .attr('transform', 'rotate(-90)')
@@ -66,6 +94,7 @@ export class BarChartComponent implements OnInit{
       .attr('text-anchor', 'end')
       .text('Frequency');
   }
+
 
   drawBars() {
     this.g.selectAll('.bar')

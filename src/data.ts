@@ -19,6 +19,8 @@ export const StatsBarChart: any[] = [
   { company: 'EMC', frequency: 4000 },
 ];
 
+
+
 export const POPULATION: any[] = [
   { age: '<5', population: 2704659 },
   { age: '5-13', population: 4499890 },
