@@ -19,6 +19,7 @@ import { FactoryComponent } from './factory/factory.component';
 import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
 import { ChartDataService } from './dependency-injection/chart-data.service';
 import { ScatterComponent } from './scatter/scatter.component';
+import { ShapeComponent } from './shape/shape.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ScatterComponent } from './scatter/scatter.component';
     FactoryComponent,
     DependencyInjectionComponent,
     ScatterComponent,
+    ShapeComponent,
   ],
   imports: [
     BrowserModule,
