@@ -20,6 +20,7 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
 import { ChartDataService } from './dependency-injection/chart-data.service';
 import { ScatterComponent } from './scatter/scatter.component';
 import { ShapeComponent } from './shape/shape.component';
+import { GraphComponent } from './graph/graph.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { ShapeComponent } from './shape/shape.component';
     DependencyInjectionComponent,
     ScatterComponent,
     ShapeComponent,
+    GraphComponent,
   ],
   imports: [
     BrowserModule,
